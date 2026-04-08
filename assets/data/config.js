@@ -11,8 +11,8 @@ window.APP_CONFIG = {
     title: "Interaktivni kutak",
     subtitle:
       "Odaberite kratku igru, zabavite se i nastavite digitalno uz HP Mostar.",
-    inactivityMs: 900000000000,
-    endScreenReturnMs: 900000000000,
+    inactivityMs: 900000,
+    endScreenReturnMs: 900000,
   },
   introHighlights: [
     "Memory s HP Mostar uslugama",
