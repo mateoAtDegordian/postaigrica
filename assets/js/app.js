@@ -329,8 +329,8 @@
       };
     }
 
-    const question = config.quiz.questions[state.quiz.index];
-    const progress = ((state.quiz.index + 1) / config.quiz.questions.length) * 100;
+    const question = state.quiz.questions[state.quiz.index];
+    const progress = ((state.quiz.index + 1) / state.quiz.questions.length) * 100;
 
     renderLayout(`
       <section class="screen screen-game">
@@ -340,7 +340,7 @@
           </div>
           <div class="stat-row">
             <div class="stat-box"><span>Pitanje</span><strong>${state.quiz.index + 1}/${
-      config.quiz.questions.length
+      state.quiz.questions.length
     }</strong></div>
           </div>
         </header>
@@ -379,7 +379,7 @@
   }
 
   function finishQuiz() {
-    const total = config.quiz.questions.length;
+    const total = state.quiz.questions.length;
 
     state.endPayload = {
       mode: "quiz",
@@ -397,7 +397,7 @@
     if (!state.quiz || state.quiz.answering) return;
     state.quiz.answering = true;
 
-    const question = config.quiz.questions[state.quiz.index];
+    const question = state.quiz.questions[state.quiz.index];
     const isCorrect = selectedIndex === question.correctIndex;
 
     state.quiz.answers.push({
@@ -430,7 +430,7 @@
     window.setTimeout(() => {
       state.quiz.index += 1;
       state.quiz.answering = false;
-      if (state.quiz.index >= config.quiz.questions.length) {
+      if (state.quiz.index >= state.quiz.questions.length) {
         finishQuiz();
       } else {
         renderQuiz();
@@ -505,6 +505,7 @@
       correctCount: 0,
       answers: [],
       answering: false,
+      questions: shuffle(config.quiz.questions).slice(0, 5),
     };
     renderQuiz();
   }
