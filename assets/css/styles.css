@@ -68,11 +68,12 @@ a {
 
 .app-shell {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   padding: 28px 36px 36px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: clamp(12px, 1.6vh, 22px);
 }
 
 .app-header {
@@ -99,7 +100,7 @@ a {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: clamp(14px, 2vh, 28px);
   flex: 1;
 }
 
@@ -129,7 +130,7 @@ a {
 .top-bar,
 .cta-panel {
   display: grid;
-  gap: 24px;
+  gap: clamp(14px, 2vh, 24px);
 }
 
 .hero-panel {
@@ -146,10 +147,10 @@ a {
 }
 
 .hero-copy {
-  padding: 42px;
+  padding: clamp(24px, 3.5vh, 42px);
   position: relative;
   overflow: hidden;
-  min-height: 320px;
+  min-height: 0;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow);
 }
@@ -267,7 +268,7 @@ h3 {
   min-height: 0;
   height: 100%;
   border: 0;
-  padding: 34px;
+  padding: clamp(18px, 2.8vh, 34px);
   text-align: left;
   touch-action: manipulation;
   user-select: none;
@@ -305,10 +306,10 @@ h3 {
 }
 
 .mode-pill {
-  padding: 12px 18px;
+  padding: clamp(7px, 1vh, 12px) 18px;
   border-radius: 999px;
   background: rgba(5, 5, 5, 0.09);
-  margin-bottom: 24px;
+  margin-bottom: clamp(10px, 1.5vh, 24px);
   font-size: clamp(1rem, 0.95vw, 1.2rem);
 }
 
@@ -318,22 +319,22 @@ h3 {
 }
 
 .mode-card p {
-  margin-top: 12px;
-  margin-bottom: clamp(24px, 3vh, 40px);
+  margin-top: clamp(6px, 0.8vh, 12px);
+  margin-bottom: clamp(10px, 1.8vh, 40px);
   max-width: 28ch;
-  font-size: clamp(1.35rem, 1.35vw, 2rem);
-  line-height: 1.42;
+  font-size: clamp(1.1rem, 1.35vw, 2rem);
+  line-height: 1.4;
 }
 
 .mode-cta {
   margin-top: auto;
-  margin-bottom: 6px;
-  min-height: 76px;
+  margin-bottom: 4px;
+  min-height: clamp(48px, 6vh, 76px);
   padding: 0 30px;
   border-radius: 16px;
   background: var(--black);
   color: var(--white);
-  font-size: clamp(1.15rem, 1.15vw, 1.6rem);
+  font-size: clamp(1rem, 1.15vw, 1.6rem);
 }
 
 .top-bar {
@@ -837,10 +838,6 @@ h3 {
 }
 
 @media (max-width: 1280px) {
-  body {
-    overflow: auto;
-  }
-
   .app-shell {
     padding: 24px;
   }
