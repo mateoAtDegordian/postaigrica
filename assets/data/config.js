@@ -21,7 +21,7 @@ window.APP_CONFIG = {
   memory: {
     title: "Memory",
     description:
-      "Spojite sve parove što brže i s što manje promašaja.",
+      "Spojite sve parove što brže i sa što manje promašaja.",
     pairs: [
       {
         id: "brza-posta",
@@ -175,6 +175,13 @@ window.APP_CONFIG = {
       caption: "Pridruži se službenom Viber botu",
       image: "./assets/qr/viber-bot.svg",
       fallbackUrl: "https://www.post.ba/brza-posta/viber-zajednica-brze-poste-1323",
+    },
+    {
+      id: "instagram",
+      title: "Instagram",
+      caption: "Zaprati nas na Instagramu",
+      image: "./assets/qr/instagram.svg",
+      fallbackUrl: "https://www.instagram.com/hrvatskapostamostar/",
     },
   ],
 };
